@@ -5,12 +5,16 @@ LABEL maintainer="Bartlomiej Komendarczuk" \
       release-date="07.03.2020"
 
 RUN apt-get update \
-    && apt-get install --yes software-properties-common \
-    && add-apt-repository --yes --update ppa:deadsnakes/ppa \
-    && add-apt-repository --yes --update ppa:ansible/ansible \
-    && apt-get install --yes python3.6 \
-    && apt-get install --yes python3-pip libssl-dev \
-    && apt-get install --yes locales \
+    && apt-get install --yes software-properties-common
+
+RUN add-apt-repository --yes --update ppa:deadsnakes/ppa \
+    && add-apt-repository --yes --update ppa:ansible/ansible
+
+RUN apt-get install --yes python3.6 \
+    && apt-get install --yes python3-pip libssl-dev
+
+
+RUN apt-get install --yes locales \
     && apt-get install --yes language-pack-en
 
 ENV LANG en_US.UTF-8
