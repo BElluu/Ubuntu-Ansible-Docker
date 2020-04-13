@@ -13,11 +13,10 @@ RUN apt-get update \
     && apt-get install --yes locales \
     && apt-get install --yes language-pack-en
 
-ENV LANG en_US.UTF-8 
-ENV LANGUAGE en_US:en 
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
 RUN apt-get install --yes ansible \
     && python3 -m pip install --upgrade setuptools \
     && python3 -m pip install molecule
-
