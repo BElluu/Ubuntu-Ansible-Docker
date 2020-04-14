@@ -4,23 +4,23 @@ LABEL maintainer="Bartlomiej Komendarczuk" \
       email="bkomendarczuk@gmail.com" \
       release-date="07.03.2020"
 
-RUN apt-get update \
-    && apt-get install --yes software-properties-common
+RUN apt-get update
+RUN apt-get install --yes software-properties-common
 
-RUN add-apt-repository --yes --update ppa:deadsnakes/ppa \
-    && add-apt-repository --yes --update ppa:ansible/ansible
+RUN add-apt-repository --yes --update ppa:deadsnakes/ppa
+RUN add-apt-repository --yes --update ppa:ansible/ansible
 
-RUN apt-get install --yes python3.6 \
-    && apt-get install --yes python3-pip libssl-dev
+RUN apt-get install --yes python3.6
+RUN apt-get install --yes python3-pip
+RUN apt-get install --yes libssl-dev
 
-
-RUN apt-get install --yes locales \
-    && apt-get install --yes language-pack-en
+RUN apt-get install --yes locales
+RUN apt-get install --yes language-pack-en
 
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
-RUN apt-get install --yes ansible \
-    && python3 -m pip install --upgrade setuptools \
-    && python3 -m pip install molecule
+RUN apt-get install --yes ansible
+RUN python3 -m pip install --upgrade setuptools
+RUN python3 -m pip install molecule
