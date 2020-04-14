@@ -10,7 +10,7 @@ RUN apt-get install --yes software-properties-common
 RUN add-apt-repository --yes --update ppa:deadsnakes/ppa
 RUN add-apt-repository --yes --update ppa:ansible/ansible
 
-RUN apt-get install --yes python3.6
+RUN apt-get install --yes python3.7
 RUN apt-get install --yes python3-pip
 RUN apt-get install --yes libssl-dev
 
